@@ -17,6 +17,7 @@ VALUES ("Joey", "Joey", 1, 1),
         ("Stanley", "Kube", 2, 2),
         ("Angela", "Taylor", 3, 3),
         ("Anthony", "Cromartie", 4, 4),
-        ("Sarah", "Coulson", 5, 5),
+        ("Sarah", "Coulson", 5, 5);
+
 
 
