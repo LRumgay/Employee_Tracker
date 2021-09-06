@@ -6,7 +6,7 @@ async function getConnection() {
             host: 'localhost',
             user: 'root',
             password: 'password',
-            database: 'movies_db'
+            database: 'tracker_db'
         }
     );
     return connection;
