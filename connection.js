@@ -5,7 +5,7 @@ async function getConnection() {
         {
             host: 'localhost',
             user: 'root',
-            password: 'password',
+            password: 'Rumgay77!',
             database: 'tracker_db'
         }
     );

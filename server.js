@@ -1,11 +1,9 @@
 require('dotenv').config()
 const inquirer = require('inquirer');
-const express = require('express');
-const app = express(); 
 const department = require('./lib/department');
 const employee = require('./lib/employee');
 const role = require('./lib/role');
-
+const connection = require('./connection')
 
 const PORT = process.env.PORT || 3001;
 
@@ -15,7 +13,7 @@ async function main() {
     const mysql = require('mysql2/promise');
     // create the connection
     try {
-        const connection = await mysql.createConnection({ host: process.env.DB_HOST, user: process.env.DB_USER, database: process.env.DB_NAME });
+        // const connection = await mysql.createConnection({ host: process.env.DB_PASSWORD, user: process.env.DB_USER, database: process.env.DB_NAME });
         const answers = await inquirer
             .prompt([
                 {
@@ -77,4 +75,3 @@ async function main() {
 
 
 main();
-app.listen(PORT, () => console.log(`listening on port ${PORT}`));
