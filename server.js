@@ -1,4 +1,5 @@
 require('dotenv').config()
+// const db = require('./db')
 const inquirer = require('inquirer');
 const department = require('./lib/department');
 const employee = require('./lib/employee');
@@ -28,7 +29,7 @@ async function main() {
                         'Add a role',
                         'Add an employee',
                         'Update an employee role',
-                        'Done'
+                        'Exit'
                     ]
 
                 },
@@ -58,6 +59,7 @@ async function main() {
         if (answers.action === 'Add an employee'){
             const [rows, fields] = await connection.execute('INSERT INTO `employee`');
             console.table(rows);
+            addEmployee();
         }
         if (answers.action === 'Update an employee role'){
             const [rows, fields] = await connection.execute('SELECT * FROM `role`');
@@ -75,3 +77,19 @@ async function main() {
 
 
 main();
+
+function addEmployee (){
+    db.query("SELECT * FROM employee", function (req, res){
+        if (err){
+            throw(err)
+        }
+    })
+    inquirer.prompt([
+        {
+            type:"input",
+            name:"Add Employee",
+            message:"What is the name of the employee you would like to add?",
+        }
+        
+    ])
+}
