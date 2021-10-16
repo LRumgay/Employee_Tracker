@@ -74,10 +74,6 @@ async function main() {
     }
 };
 
-
-
-main();
-
 function addEmployee (){
     db.query("SELECT * FROM employee", function (req, res){
         if (err){
@@ -91,5 +87,8 @@ function addEmployee (){
             message:"What is the name of the employee you would like to add?",
         }
         
-    ])
+    ]);
 }
+
+
+main();
